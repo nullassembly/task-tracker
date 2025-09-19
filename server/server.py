@@ -26,7 +26,7 @@ def get_db():
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["https://task-tracker-eight-xi.vercel.app/"],
     allow_methods=["GET", "POST", "DELETE", "PATCH"],
     allow_credentials=True,
     allow_headers=["*"],
