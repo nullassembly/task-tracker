@@ -5,7 +5,7 @@ from pathlib import Path
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-from app_types.types import TaskForm, TaskUpdate, TasksRead, TasksResponse
+from app_types import TaskForm, TaskUpdate, TasksRead, TasksResponse
 
 db_path = Path(__file__).parent.joinpath("tasks.db")
 
