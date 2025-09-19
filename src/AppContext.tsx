@@ -22,7 +22,7 @@ export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await client.get("http://127.0.0.1:8000/tasks");
+        const res = await client.get("/tasks");
         setTasks(res.data.tasks);
       } catch (error) {
         console.error("App.tsx:", error);
