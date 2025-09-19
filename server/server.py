@@ -26,7 +26,10 @@ def get_db():
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://task-tracker-eight-xi.vercel.app"],
+    allow_origins=[
+        "https://task-tracker-eight-xi.vercel.app",
+        "https://vercel.com/michaelalexanderdentons-projects/task-tracker/8bFpqW6NYqeqFMWAwb6VgxKSs8f8",
+    ],
     allow_methods=["*"],
     allow_credentials=True,
     allow_headers=["*"],
