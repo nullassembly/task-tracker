@@ -1,5 +1,6 @@
 # Task Tracker app
 
+You can test it here: [Showcase] (https://task-tracker-eight-xi.vercel.app/)
 First project using React + FastAPI:
 
 - Using Vite's React application + Shadcn UI library
@@ -14,3 +15,4 @@ It still needs to fix minor bugs. but the core feature are working flawlessly.
 - ~~Error handling unknown errors~~ Done!
 - fancy animations using Framer
 - ~~loading screen to wait for Render's backend to run.~~ Done!
+- Needs a favicon
