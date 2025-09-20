@@ -11,6 +11,6 @@ It still needs to fix minor bugs. but the core feature are working flawlessly.
 
 ## Features / bugs to fix:
 
-- Error handling unknown errors
+- ~~Error handling unknown errors~~ Done!
 - fancy animations using Framer
-- loading screen to wait for Render's backend to run.
+- ~~loading screen to wait for Render's backend to run.~~ Done!

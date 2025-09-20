@@ -36,7 +36,7 @@ export const TaskProvider = ({ children }: { children: React.ReactNode }) => {
     setLoading("serverloading");
     setServerLoading(true);
     let attempts = 0;
-    while (attempts < 5) {
+    while (attempts < 10) {
       try {
         await client.get("/ping", {
           timeout: 5000,
