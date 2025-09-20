@@ -27,6 +27,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "http://localhost:5173",
         "https://task-tracker-eight-xi.vercel.app",
         "https://vercel.com/michaelalexanderdentons-projects/task-tracker/8bFpqW6NYqeqFMWAwb6VgxKSs8f8",
     ],
@@ -34,6 +35,11 @@ app.add_middleware(
     allow_credentials=True,
     allow_headers=["*"],
 )
+
+
+@app.get("/ping")
+def wait_for_server():
+    return JSONResponse(content={"status": "ok"}, status_code=status.HTTP_200_OK)
 
 
 @app.get("/tasks", response_model=TasksResponse)

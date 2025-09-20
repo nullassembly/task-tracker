@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "./components/ui/table";
-import { Frown, Plus, SquarePen, X } from "lucide-react";
+import { Frown, Loader2Icon, Plus, SquarePen, Unplug, X } from "lucide-react";
 import type { Task } from "./types/types";
 import { Button } from "./components/ui/button";
 import {
@@ -82,7 +82,7 @@ function App() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto flex flex-col justify-center gap-8 mt-32">
+    <div className="max-w-6xl mx-auto flex flex-col justify-center gap-8 mt-16">
       <div className="flex flex-col gap-3 text-center">
         <h1 className="text-4xl text-gray-700 font-semibold">Task Manager</h1>
         <p className="tracking-wide text-gray-500 text-sm">
@@ -167,12 +167,39 @@ function App() {
           </TableFooter>
         )}
       </Table>
-      {ctx.tasks?.length == 0 && (
-        <div className="flex flex-col gap-4 text-gray-500 items-center">
-          <Frown size={96} />
-          <p className="text-xl">No tasks to show</p>
-        </div>
-      )}
+      <div className="flex flex-col gap-4 text-gray-500 items-center">
+        {ctx.loading == "fail" && (
+          <>
+            <Unplug size={96} />
+            <p>Could not connect to server.</p>
+            <Button
+              variant={"link"}
+              className="text-md font-semibold cursor-pointer"
+              onClick={() => {
+                ctx.fetchTasks();
+              }}
+            >
+              Try again
+            </Button>
+          </>
+        )}
+        {ctx.loading === "loading" && (
+          <>
+            <Loader2Icon size={80} className="animate-spin text-gray-300" />
+            <p>Loading Tasks...</p>
+          </>
+        )}
+        {ctx.loading === "loaded" && (
+          <>
+            {ctx.tasks?.length == 0 && (
+              <>
+                <Frown size={96} />
+                <p className="text-xl">No tasks to show</p>
+              </>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }

@@ -4,3 +4,10 @@ export type Task = {
   created: Date;
   completed: number;
 };
+
+export type LoadState =
+  | "loading"
+  | "loaded"
+  | "fail"
+  | "serverfail"
+  | "serverloading";
