@@ -1,6 +1,6 @@
 # Task Tracker app
 
-You can test it here: [Showcase] (https://task-tracker-eight-xi.vercel.app/)
+You can test it here: [Showcase](https://task-tracker-eight-xi.vercel.app/)
 First project using React + FastAPI:
 
 - Using Vite's React application + Shadcn UI library
